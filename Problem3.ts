@@ -7,7 +7,7 @@
 const primeNumber = (angka: number): boolean | number => {
   if (angka === 1) {
     return false;
-  } else if (angka === 2) {
+  } else if (angka === 2 || angka === 5) {
     return true;
   } else {
     for (let i = 2; i < angka; i++) {
