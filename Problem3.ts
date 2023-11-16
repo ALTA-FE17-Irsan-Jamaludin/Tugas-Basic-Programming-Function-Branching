@@ -5,20 +5,15 @@
 // // Kamu diminta untuk membuat fungsi untuk menentukan bahwa sebuah bilangan termasuk bilangan prima atau tidak.
 
 const primeNumber = (angka: number): boolean | number => {
-  if (angka === 1) {
+  if (angka < 2) {
     return false;
-  } else if (angka === 2 || angka === 5) {
-    return true;
-  } else {
-    for (let i = 2; i < angka; i++) {
-      if (angka % i === 0 || angka % 5 === 0) {
-        return false;
-      } else {
-        return true;
-      }
+  }
+  for (let i = 2; i <= Math.sqrt(angka); i++) {
+    if (angka % i === 0) {
+      return false;
     }
   }
-  return angka;
+  return true;
 };
 
 console.log(primeNumber(11)); // true
@@ -26,3 +21,4 @@ console.log(primeNumber(13)); // true
 console.log(primeNumber(17)); // true
 console.log(primeNumber(20)); // false
 console.log(primeNumber(35)); // false
+console.log(primeNumber(9)); // false
